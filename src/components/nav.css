@@ -1,0 +1,23 @@
+.nav {
+  margin: 1rem;
+  text-align: center;
+}
+
+.nav__link {
+  color: #4a876c;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.15s all;
+}
+
+.nav__link:visited {
+  color: #8d6094;
+}
+
+.nav__link:hover {
+  text-decoration: underline;
+}
+
+.nav__link:active {
+  color: #b7cfc4;
+}
