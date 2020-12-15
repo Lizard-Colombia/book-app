@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { usersCollection } from "../data/firebase";
 
-function useAllMovies(userId) {
-  const [movies, setMovies] = useState([]);
+function useAllBooks(userId) {
+  const [books, setBooks] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -12,19 +12,19 @@ function useAllMovies(userId) {
     const onNext = (snapshot) => {
       setIsLoading(false);
       const docs = snapshot.docs;
-      setMovies(docs);
+      setBooks(docs);
     };
 
     const onError = (error) => {
       setIsLoading(false);
-      setErrorMessage("There was a problem loading your movie ratings. Please try again.");
+      setErrorMessage("There was a problem loading your book ratings. Please try again.");
       console.error(error);
     };
-const unsubscribe = usersCollection.doc(userId).collection("movies").orderBy("title", "desc").onSnapshot(onNext, onError);
+const unsubscribe = usersCollection.doc(userId).collection("books").orderBy("title", "desc").onSnapshot(onNext, onError);
     return unsubscribe;
   }, []);
 
-  return [movies, isLoading, errorMessage];
+  return [books, isLoading, errorMessage];
 }
 
-export default useAllMovies;
+export default useAllBooks;

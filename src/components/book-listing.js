@@ -1,21 +1,21 @@
 import React from "react";
 import LoadingSpinner from "./loading-spinner";
 import ErrorMessage from "./error-message";
-import Movie from "./movie";
-import useAllMovies from "../hooks/use-all-movies";
-import "./movie-listing.css";
+import Book from "./book";
+import useAllBooks from "../hooks/use-all-books";
+import "./book-listing.css";
 
 // useEffect Hook:
 // > Guide, https://reactjs.org/docs/hooks-effect.html
 // > API Docs, https://reactjs.org/docs/hooks-reference.html#useeffect
 
-function MovieListing(props) {
+function BookListing(props) {
   // console.log(props);
   const userId = props.user.uid;
-  const [movies, isLoading, errorMessage] = useAllMovies(userId);
+  const [books, isLoading, errorMessage] = useAllBooks(userId);
 
   return (
-    <div className="movies-container">
+    <div className="books-container">
       <h1>Books</h1>
       {isLoading && (
         <LoadingSpinner
@@ -25,13 +25,13 @@ function MovieListing(props) {
         />
       )}
       {errorMessage && <ErrorMessage displayAsCard>{errorMessage}</ErrorMessage>}
-      <ul className="movie-list">
-        {movies.map((movieDoc) => {
-          const movieId = movieDoc.id;
-          const movieData = movieDoc.data();
+      <ul className="book-list">
+        {books.map((bookDoc) => {
+          const bookId = bookDoc.id;
+          const bookData = bookDoc.data();
           return (
-            <li key={movieId}>
-              <Movie id={movieId} data={movieData} userId={userId} />
+            <li key={bookId}>
+              <Book id={bookId} data={bookData} userId={userId} />
             </li>
           );
         })}
@@ -40,4 +40,4 @@ function MovieListing(props) {
   );
 }
 
-export default MovieListing;
+export default BookListing;

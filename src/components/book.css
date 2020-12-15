@@ -1,4 +1,4 @@
-.movie {
+.book {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva,
     Verdana, sans-serif;
   line-height: 1.75em;
@@ -14,7 +14,7 @@
   justify-content: space-between;
 }
 
-.movie__button {
+.book__button {
   padding: 0.25rem;
   border-radius: 50%;
   border: none;
@@ -24,51 +24,51 @@
   outline: none;
 }
 
-.movie_button:disabled {
+.book_button:disabled {
   opacity: 0.5;
 }
 
-.movie__button:focus {
+.book__button:focus {
   color: white;
   background-color: #151116;
 }
 
-.movie__button:hover {
+.book__button:hover {
   color: white;
   background-color: #151116;
 }
 
-.movie__button:active {
+.book__button:active {
   color: white;
   background-color: #151116;
 }
 
-.movie__button svg {
+.book__button svg {
   font-size: 1.35rem;
 }
 
-.movie > * {
+.book > * {
   margin-bottom: 0.25rem;
 }
 
-.movie__title {
+.book__title {
   font-weight: bold;
   font-size: 18px;
   color: #244424;
 }
 
-.movie__subtitle {
+.book__subtitle {
   font-weight: 400;
   font-size: 18px;
   color: #244424;
 }
 
-.movie__review {
+.book__review {
   font-weight: bold;
   font-size: 18px;
   color: #a480a9;
 }
 
-.movie__year {
+.book__year {
   font-style: italic;
 }

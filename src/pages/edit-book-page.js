@@ -1,9 +1,9 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import { useParams } from "react-router-dom";
-import EditMovie from "../components/edit-movie";
+import EditBook from "../components/edit-book";
 
-function EditMoviePage(props) {
+function EditBookPage(props) {
   const { id } = useParams();
 
   return (
@@ -11,9 +11,9 @@ function EditMoviePage(props) {
       <Helmet>
         <title>Edit</title>
       </Helmet>
-      <EditMovie id={id} {...props} />
+      <EditBook id={id} {...props} />
     </main>
   );
 }
 
-export default EditMoviePage;
+export default EditBookPage;

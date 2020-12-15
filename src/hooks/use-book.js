@@ -1,24 +1,24 @@
 import { useState, useEffect } from "react";
 import { usersCollection } from "../data/firebase";
 
-function useMovie(userId, movieId) {
+function useBook(userId, bookId) {
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
-  const [movieData, setMovieData] = useState(null);
+  const [bookData, setBookData] = useState(null);
 
   useEffect(() => {
-    async function getMovie() {
+    async function getBook() {
       setIsLoading(true);
 
       try {
-        const movieSnapshot = await usersCollection.doc(userId).collection("movies").doc(movieId).get();
+        const bookSnapshot = await usersCollection.doc(userId).collection("books").doc(bookId).get();
 
-        if (!movieSnapshot.exists) {
+        if (!bookSnapshot.exists) {
           throw new Error("No such book exists!");
         }
 
-        const data = movieSnapshot.data();
-        setMovieData(data);
+        const data = bookSnapshot.data();
+        setBookData(data);
       } catch (error) {
         setErrorMessage("Something went wrong. Please try again.");
         console.error(error);
@@ -27,10 +27,10 @@ function useMovie(userId, movieId) {
       setIsLoading(false);
     }
 
-    getMovie();
-  }, [movieId]);
+    getBook();
+  }, [bookId]);
 
-  return [movieData, isLoading, errorMessage];
+  return [bookData, isLoading, errorMessage];
 }
 
-export default useMovie;
+export default useBook;

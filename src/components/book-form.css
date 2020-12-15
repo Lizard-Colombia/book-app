@@ -1,4 +1,4 @@
-.movie-form {
+.book-form {
   padding: 1.5rem;
   background-color: #fff;
   color: #151116;
@@ -6,14 +6,14 @@
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
 }
 
-.movie-form__message {
+.book-form__message {
   text-align: center;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva,
     Verdana, sans-serif;
   color: #a480a9;
 }
 
-.movie-form__controls {
+.book-form__controls {
   display: grid;
   grid-template-columns: auto 1fr;
   min-width: 400px;
@@ -23,14 +23,14 @@
   border: none;
 }
 
-.movie-form__title {
+.book-form__title {
   margin: 0 0 1rem 0;
   grid-column: 1 / 3;
   text-align: center;
   font-size: 2rem;
   color: #a480a9;
 }
-.movie-form__subtitle {
+.book-form__subtitle {
   margin: 0 0 1rem 0;
   grid-column: 1 / 3;
   text-align: center;
@@ -40,7 +40,7 @@
     Verdana, sans-serif;
 }
 
-.movie-form__label {
+.book-form__label {
   grid-column: 1 / 2;
   margin-right: 5px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva,
@@ -48,14 +48,14 @@
   color: #3b2d3d;
 }
 
-.movie-form__input {
+.book-form__input {
   grid-column: 2 / 3;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva,
     Verdana, sans-serif;
   color: #3b2d3d;
 }
 
-.movie-form__submit {
+.book-form__submit {
   margin: 1rem 0 0 0;
   padding: 0.3rem;
   grid-column: 1 / 3;

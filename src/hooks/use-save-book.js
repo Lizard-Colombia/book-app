@@ -1,19 +1,19 @@
 import { useState } from "react";
 import { usersCollection } from "../data/firebase";
 
-function useSaveMovie() {
+function useSaveBook() {
   const [isSaving, setIsSaving] = useState(false);
   const [formMessage, setFormMessage] = useState("");
 
-  const save = async (movieData, userId, movieId) => {
+  const save = async (bookData, userId, bookId) => {
     setIsSaving(true);
     setFormMessage("");
 
     try {
-      if (movieId === undefined) {
-        await usersCollection.doc(userId).collection("movies").add(movieData);
+      if (bookId === undefined) {
+        await usersCollection.doc(userId).collection("books").add(bookData);
       } else {
-        await usersCollection.doc(userId).collection("movies").doc(movieId).set(movieData);
+        await usersCollection.doc(userId).collection("books").doc(bookId).set(bookData);
       }
       setFormMessage("Saved successfully!");
     } catch (error) {
@@ -27,4 +27,4 @@ function useSaveMovie() {
   return [save, isSaving, formMessage];
 }
 
-export default useSaveMovie;
+export default useSaveBook;

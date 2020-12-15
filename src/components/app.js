@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
-import AddMoviePage from "../pages/add-movie-page";
-import EditMoviePage from "../pages/edit-movie-page";
+import AddBookPage from "../pages/add-book-page";
+import EditBookPage from "../pages/edit-book-page";
 import AccountPage from "../pages/account-page";
-import MoviesPage from "../pages/movies-page";
+import BooksPage from "../pages/books-page";
 import NotFoundPage from "../pages/not-found-page";
 import { auth } from "../data/firebase";
 import Nav from "./nav";
@@ -34,15 +34,15 @@ function App() {
         </Route>
 
         <AuthenticatedRoute path="/" exact isAuthenticated={isAuthenticated}>
-          <MoviesPage user={user} />
+          <BooksPage user={user} />
         </AuthenticatedRoute>
 
         <AuthenticatedRoute path="/add" isAuthenticated={isAuthenticated}>
-          <AddMoviePage user={user} />
+          <AddBookPage user={user} />
         </AuthenticatedRoute>
 
         <AuthenticatedRoute path="/edit/:id" isAuthenticated={isAuthenticated}>
-          <EditMoviePage user={user} />
+          <EditBookPage user={user} />
         </AuthenticatedRoute>
 
         <Route path="*">

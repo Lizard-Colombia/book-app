@@ -18,11 +18,11 @@ ReactDOM.render(<App />, document.getElementById("root"));
 //   }
 // }
 
-// async function getUsersMovies() {
+// async function getUsersBooks() {
 //   try {
 //     const snapshot = await usersCollection
 //       .doc("YfbZfUhWTPeOl1K7XvtAhYmXEtH3")
-//       .collection("movies")
+//       .collection("books")
 //       .get();
 //     snapshot.forEach((doc) => {
 //       console.log(doc.id);
@@ -33,4 +33,4 @@ ReactDOM.render(<App />, document.getElementById("root"));
 //   }
 // }
 
-// getUsersMovies();
+// getUsersBooks();

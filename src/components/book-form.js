@@ -1,9 +1,9 @@
 // import { Checkbox } from "@material-ui/core";
 import React, { useState } from "react";
 import ErrorMessage from "./error-message";
-import "./movie-form.css";
+import "./book-form.css";
 
-function MovieForm(props) {
+function BookForm(props) {
   const { initialState = {}, message, isSaving, onSubmit } = props;
 
   if (initialState.title === undefined) initialState.title = "";
@@ -11,7 +11,7 @@ function MovieForm(props) {
   if (initialState.rating === undefined) initialState.rating = 3;
   if (initialState.releaseYear === undefined) initialState.releaseYear = 2020;
   if (initialState.level === undefined) initialState.level = "";
-  if (initialState.series === undefined) initialState.series = "";
+  if (initialState.series === undefined) initialState.series = false;
   if (initialState.numberSeries === undefined) initialState.numberSeries = 1;
   if (initialState.pages === undefined) initialState.pages = 1;
   if (initialState.review === undefined) initialState.review = "";
@@ -46,7 +46,7 @@ function MovieForm(props) {
   };
 
   const onSeriesChange = (event) => {
-    setSeries(event.target.value);
+    setSeries(event.target.checked);
   };
 
   const onNumberSeriesChange = (event) => {
@@ -62,7 +62,7 @@ function MovieForm(props) {
   };
 
  
-  const onMovieSumbit = async (event) => {
+  const onBookSumbit = async (event) => {
     if (title === ""){
       setErrorMessage("You must provide a title.");
       return;
@@ -74,33 +74,33 @@ function MovieForm(props) {
     
 
   return (
-    <form className="movie-form" onSubmit={onMovieSumbit}>
-      <h2 className="movie-form__title">Book Details</h2>
-      {message && <p className="movie-form__message">{message}</p>}
+    <form className="book-form" onSubmit={onBookSumbit}>
+      <h2 className="book-form__title">Book Details</h2>
+      {message && <p className="book-form__message">{message}</p>}
       {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
-      <fieldset className="movie-form__controls" disabled={isSaving}>
+      <fieldset className="book-form__controls" disabled={isSaving}>
 
    {/* Title */}
-        <label className="movie-form__label">Book Title:</label>
-                <input className="movie-form__input" type="text" value={title} onChange={onTitleChange} />
+        <label className="book-form__label">Book Title:</label>
+                <input className="book-form__input" type="text" value={title} onChange={onTitleChange} />
 
   {/* Author */}
-        <label className="movie-form__label">Author:</label> 
-                <input className="movie-form__input" type="text" value={author} onChange={onAuthorChange} /> 
+        <label className="book-form__label">Author:</label> 
+                <input className="book-form__input" type="text" value={author} onChange={onAuthorChange} /> 
 
    {/*Rating  */}
-        <label className="movie-form__label">Rating:</label>
+        <label className="book-form__label">Rating:</label>
           <input
-          className="movie-form__input"
+          className="book-form__input"
           type="number"
           value={rating}
           onChange={onRatingChange}
         />
 
    {/* Year */}
-        <label className="movie-form__label">Year: </label>
+        <label className="book-form__label">Year: </label>
         <input
-          className="movie-form__input"
+          className="book-form__input"
           type="number"
           value={releaseYear}
           onChange={onYearReleasedChange}
@@ -108,28 +108,28 @@ function MovieForm(props) {
   
 
   {/* Level */}
-        <label className="movie-form__label">Book Level:</label>
-                <input className="movie-form__input" type="text" value={level} onChange={onLevelChange} />
+        <label className="book-form__label">Book Level:</label>
+                <input className="book-form__input" type="text" value={level} onChange={onLevelChange} />
 
   {/* Series */}
-        <label className="movie-form__label">Series?</label>
-                <input className="movie-form__input" type="text" value={series} onChange={onSeriesChange} />
+        <label className="book-form__label">Series?</label>
+                <input className="book-form__input" type="checkbox" checked={series} onChange={onSeriesChange} />
 
    {/* numberSeries */}
-        <label className="movie-form__label">Number in series:</label>
-                <input className="movie-form__input" type="number" value={numberSeries} onChange={onNumberSeriesChange} />
+        <label className="book-form__label">Number in series:</label>
+                <input className="book-form__input" type="number" value={numberSeries} onChange={onNumberSeriesChange} />
 
   {/* Pages */}
-        <label className="movie-form__label">Total Pages:</label>
-                <input className="movie-form__input" type="number" value={pages} onChange={onPagesChange} />
+        <label className="book-form__label">Total Pages:</label>
+                <input className="book-form__input" type="number" value={pages} onChange={onPagesChange} />
 
   {/* Review */}
-        <label className="movie-form__label">Book Review:</label>
-                <input className="movie-form__input" type="text" value={review} onChange={onReviewChange} />
+        <label className="book-form__label">Book Review:</label>
+                <input className="book-form__input" type="text" value={review} onChange={onReviewChange} />
 
   {/* SAVE BUTTON */}
         <input
-          className="movie-form__submit"
+          className="book-form__submit"
           type="submit"
           value={isSaving ? "Saving..." : "Save"}
         />
@@ -139,4 +139,4 @@ function MovieForm(props) {
   );
 }
 
-export default MovieForm;
+export default BookForm;

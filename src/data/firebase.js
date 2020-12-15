@@ -18,8 +18,8 @@ const provider = new firebase.auth.GoogleAuthProvider();
 const auth = firebase.auth();
 
 const db = firebase.firestore();
-const moviesCollection = db.collection("movies");
+const booksCollection = db.collection("books");
 const usersCollection = db.collection("users");
 
 export default db;
-export { moviesCollection, usersCollection, provider, auth, firebase };
+export { booksCollection, usersCollection, provider, auth, firebase };
