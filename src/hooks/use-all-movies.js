@@ -20,7 +20,7 @@ function useAllMovies(userId) {
       setErrorMessage("There was a problem loading your movie ratings. Please try again.");
       console.error(error);
     };
-const unsubscribe = usersCollection.doc(userId).collection("movies").orderBy("rating", "desc").onSnapshot(onNext, onError);
+const unsubscribe = usersCollection.doc(userId).collection("movies").orderBy("title", "desc").onSnapshot(onNext, onError);
     return unsubscribe;
   }, []);
 
