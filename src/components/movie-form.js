@@ -11,7 +11,7 @@ function MovieForm(props) {
   if (initialState.rating === undefined) initialState.rating = 3;
   if (initialState.releaseYear === undefined) initialState.releaseYear = 2020;
   if (initialState.level === undefined) initialState.level = "";
-  if (initialState.series === undefined) initialState.series = Checkbox;
+  if (initialState.series === undefined) initialState.series = "Checkbox";
   if (initialState.numberSeries === undefined) initialState.numberSeries = 1;
   if (initialState.pages === undefined) initialState.pages = 1;
   if (initialState.review === undefined) initialState.review = "";
