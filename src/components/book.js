@@ -4,7 +4,8 @@ import { useHistory } from "react-router-dom";
 import ErrorMessage from "./error-message";
 import { usersCollection } from "../data/firebase";
 import "./book.css";
-https://book-app-puce.vercel.app
+
+
 function Book(props) {
   const { id, data, userId } = props;
   const { title, rating, releaseYear, author, level, series, numberSeries, pages, review } = data;
@@ -38,7 +39,7 @@ function Book(props) {
         <div className="book__year">{releaseYear}</div>
 
         <div className="book__subtitle">Reading Level: {level}</div>
-        <div className="book__subtitle">Series? {series == true ? "Yes" : "No"} </div>
+        <div className="book__subtitle">Series? {series === true ? "Yes" : "No"} </div>
 
 
         <div className="book__subtitle">Number in Series: {numberSeries}</div>

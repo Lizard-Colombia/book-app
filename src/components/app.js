@@ -3,7 +3,7 @@ import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import AddBookPage from "../pages/add-book-page";
 import EditBookPage from "../pages/edit-book-page";
 import AccountPage from "../pages/account-page";
-import BooksPage from "../pages/books-page";
+import BooksPage from "../pages/book-page";
 import NotFoundPage from "../pages/not-found-page";
 import { auth } from "../data/firebase";
 import Nav from "./nav";
