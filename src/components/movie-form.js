@@ -1,4 +1,4 @@
-import { Checkbox } from "@material-ui/core";
+// import { Checkbox } from "@material-ui/core";
 import React, { useState } from "react";
 import ErrorMessage from "./error-message";
 import "./movie-form.css";
@@ -11,7 +11,7 @@ function MovieForm(props) {
   if (initialState.rating === undefined) initialState.rating = 3;
   if (initialState.releaseYear === undefined) initialState.releaseYear = 2020;
   if (initialState.level === undefined) initialState.level = "";
-  if (initialState.series === undefined) initialState.series = "Checkbox";
+  if (initialState.series === undefined) initialState.series = "";
   if (initialState.numberSeries === undefined) initialState.numberSeries = 1;
   if (initialState.pages === undefined) initialState.pages = 1;
   if (initialState.review === undefined) initialState.review = "";
@@ -109,23 +109,23 @@ function MovieForm(props) {
 
   {/* Level */}
         <label className="movie-form__label">Book Level:</label>
-                <input className="movie-form__input" type="text" value={title} onChange={onLevelChange} />
+                <input className="movie-form__input" type="text" value={level} onChange={onLevelChange} />
 
   {/* Series */}
         <label className="movie-form__label">Series?</label>
-                <input className="movie-form__input" type="text" value={title} onChange={onSeriesChange} />
+                <input className="movie-form__input" type="text" value={series} onChange={onSeriesChange} />
 
    {/* numberSeries */}
         <label className="movie-form__label">Number in series:</label>
-                <input className="movie-form__input" type="number" value={title} onChange={onNumberSeriesChange} />
+                <input className="movie-form__input" type="number" value={numberSeries} onChange={onNumberSeriesChange} />
 
   {/* Pages */}
         <label className="movie-form__label">Total Pages:</label>
-                <input className="movie-form__input" type="number" value={title} onChange={onPagesChange} />
+                <input className="movie-form__input" type="number" value={pages} onChange={onPagesChange} />
 
   {/* Review */}
         <label className="movie-form__label">Book Review:</label>
-                <input className="movie-form__input" type="text" value={title} onChange={onReviewChange} />
+                <input className="movie-form__input" type="text" value={review} onChange={onReviewChange} />
 
   {/* SAVE BUTTON */}
         <input

@@ -8,8 +8,8 @@ function AddMovie(props) {
   const userId = props.user.uid;
   const [saveMovie, isSaving, formMessage] = useSaveMovie();
 
-  const onMovieSumbit = async (title, rating, releaseYear) => {
-    saveMovie({ title, rating, releaseYear }, userId);
+  const onMovieSumbit = async (title, rating, releaseYear, author, level, series, numberSeries, pages, review) => {
+    saveMovie({ title, rating, releaseYear, author, level, series, numberSeries, pages, review }, userId);
   };
 
   return (

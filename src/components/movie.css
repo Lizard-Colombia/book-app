@@ -57,6 +57,18 @@
   color: #244424;
 }
 
+.movie__subtitle {
+  font-weight: 400;
+  font-size: 18px;
+  color: #244424;
+}
+
+.movie__review {
+  font-weight: bold;
+  font-size: 18px;
+  color: #a480a9;
+}
+
 .movie__year {
   font-style: italic;
 }

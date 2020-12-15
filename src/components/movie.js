@@ -9,7 +9,8 @@ function Movie(props) {
   const { id, data, userId } = props;
   const { title, rating, releaseYear, author, level, series, numberSeries, pages, review } = data;
 
-  const ratingString = "💜".repeat(rating) + "🤍".repeat(5 - rating);
+  const ratingString = "⚜️".repeat(rating);
+  // const ratingString = "⚜️".repeat(rating) + "🤍".repeat(5 - rating);
 
   const history = useHistory();
   const [isDeleting, setIsDeleting] = useState(false);
@@ -31,16 +32,16 @@ function Movie(props) {
   return (
     <div className="movie">
       <div className="movie__contents">
-        <div className="movie__title">{title}</div>
-        <div className="movie__title">{author}</div>
+        <div className="movie__title">Title: {title}</div>
+        <div className="movie__title">Author: {author}</div>
         <div className="movie__rating">{ratingString}</div>
         <div className="movie__year">{releaseYear}</div>
 
-        <div className="movie__title">{level}</div>
-        <div className="movie__title">{series}</div>
-        <div className="movie__title">{numberSeries}</div>
-        <div className="movie__title">{pages}</div>
-        <div className="movie__title">{review}</div>
+        <div className="movie__subtitle">Reading Level: {level}</div>
+        <div className="movie__subtitle">Series? Y/N: {series}</div>
+        <div className="movie__subtitle">Number in Series: {numberSeries}</div>
+        <div className="movie__subtitle">Pages: {pages}</div>
+        <div className="movie__review">Review: {review}</div>
 
         <div className="movie__review">{review ? review : "No review saved."}</div>
         {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
