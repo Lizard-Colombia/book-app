@@ -1,3 +1,4 @@
+import { Checkbox } from "@material-ui/core";
 import React, { useState } from "react";
 import ErrorMessage from "./error-message";
 import "./movie-form.css";
@@ -10,7 +11,7 @@ function MovieForm(props) {
   if (initialState.rating === undefined) initialState.rating = 3;
   if (initialState.releaseYear === undefined) initialState.releaseYear = 2020;
   if (initialState.level === undefined) initialState.level = "";
-  if (initialState.series === undefined) initialState.series = false;
+  if (initialState.series === undefined) initialState.series = Checkbox;
   if (initialState.numberSeries === undefined) initialState.numberSeries = 1;
   if (initialState.pages === undefined) initialState.pages = 1;
   if (initialState.review === undefined) initialState.review = "";
@@ -79,15 +80,15 @@ function MovieForm(props) {
       {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
       <fieldset className="movie-form__controls" disabled={isSaving}>
 
-        {/* Title */}
+   {/* Title */}
         <label className="movie-form__label">Book Title:</label>
                 <input className="movie-form__input" type="text" value={title} onChange={onTitleChange} />
 
-       {/* Author */}
+  {/* Author */}
         <label className="movie-form__label">Author:</label> 
                 <input className="movie-form__input" type="text" value={author} onChange={onAuthorChange} /> 
 
-         {/*Rating  */}
+   {/*Rating  */}
         <label className="movie-form__label">Rating:</label>
           <input
           className="movie-form__input"
@@ -96,7 +97,7 @@ function MovieForm(props) {
           onChange={onRatingChange}
         />
 
-        {/* Year */}
+   {/* Year */}
         <label className="movie-form__label">Year: </label>
         <input
           className="movie-form__input"
@@ -104,32 +105,34 @@ function MovieForm(props) {
           value={releaseYear}
           onChange={onYearReleasedChange}
         />
-     
+  
+
+  {/* Level */}
+        <label className="movie-form__label">Book Level:</label>
+                <input className="movie-form__input" type="text" value={title} onChange={onLevelChange} />
+
+  {/* Series */}
+        <label className="movie-form__label">Series?</label>
+                <input className="movie-form__input" type="text" value={title} onChange={onSeriesChange} />
+
+   {/* numberSeries */}
+        <label className="movie-form__label">Number in series:</label>
+                <input className="movie-form__input" type="number" value={title} onChange={onNumberSeriesChange} />
+
+  {/* Pages */}
+        <label className="movie-form__label">Total Pages:</label>
+                <input className="movie-form__input" type="number" value={title} onChange={onPagesChange} />
+
+  {/* Review */}
+        <label className="movie-form__label">Book Review:</label>
+                <input className="movie-form__input" type="text" value={title} onChange={onReviewChange} />
+
+  {/* SAVE BUTTON */}
         <input
           className="movie-form__submit"
           type="submit"
           value={isSaving ? "Saving..." : "Save"}
         />
-
-        {/* Level */}
-        <label className="movie-form__label">Book Level:</label>
-                <input className="movie-form__input" type="text" value={title} onChange={onLevelChange} />
-
-        {/* Series */}
-        <label className="movie-form__label">Series?</label>
-                <input className="movie-form__input" type="text" value={title} onChange={onSeriesChange} />
-
-        {/* numberSeries */}
-        <label className="movie-form__label">Number in series:</label>
-                <input className="movie-form__input" type="number" value={title} onChange={onNumberSeriesChange} />
-
-        {/* Pages */}
-        <label className="movie-form__label">Total Pages:</label>
-                <input className="movie-form__input" type="number" value={title} onChange={onPagesChange} />
-
-        {/* Review */}
-        <label className="movie-form__label">Book Review:</label>
-                <input className="movie-form__input" type="text" value={title} onChange={onReviewChange} />
         
       </fieldset>
     </form>
