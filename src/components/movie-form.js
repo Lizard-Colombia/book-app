@@ -89,8 +89,7 @@ function MovieForm(props) {
 
          {/*Rating  */}
         <label className="movie-form__label">Rating:</label>
-      
-        <input
+          <input
           className="movie-form__input"
           type="number"
           value={rating}
@@ -131,7 +130,6 @@ function MovieForm(props) {
         {/* Review */}
         <label className="movie-form__label">Book Review:</label>
                 <input className="movie-form__input" type="text" value={title} onChange={onReviewChange} />
-
         
       </fieldset>
     </form>

@@ -7,7 +7,7 @@ import "./movie.css";
 
 function Movie(props) {
   const { id, data, userId } = props;
-  const { title, releaseYear, rating, review } = data;
+  const { title, rating, releaseYear, author, level, series, numberSeries, pages, review } = data;
 
   const ratingString = "💜".repeat(rating) + "🤍".repeat(5 - rating);
 
@@ -32,8 +32,16 @@ function Movie(props) {
     <div className="movie">
       <div className="movie__contents">
         <div className="movie__title">{title}</div>
+        <div className="movie__title">{author}</div>
         <div className="movie__rating">{ratingString}</div>
         <div className="movie__year">{releaseYear}</div>
+
+        <div className="movie__title">{level}</div>
+        <div className="movie__title">{series}</div>
+        <div className="movie__title">{numberSeries}</div>
+        <div className="movie__title">{pages}</div>
+        <div className="movie__title">{review}</div>
+
         <div className="movie__review">{review ? review : "No review saved."}</div>
         {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
       </div>

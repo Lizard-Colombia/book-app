@@ -14,8 +14,8 @@ const userId = props.user.uid;
   const [movieData, isLoading, errorMessage] = useMovie(userId, movieId);
   const [saveMovie, isSaving, formMessage] = useSaveMovie();
 
-  const onMovieSubmit = async (title, rating, releaseYear) => {
-    saveMovie({ title, rating, releaseYear }, userId, movieId);
+  const onMovieSubmit = async (title, rating, releaseYear, author, level, series, numberSeries, pages, review) => {
+    saveMovie({ title, rating, releaseYear, author, level, series, numberSeries, pages, review }, userId, movieId);
   };
 
   return (
