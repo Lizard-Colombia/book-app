@@ -59,9 +59,9 @@ function AccountInfo(props) {
 
   return (
     <div className="account-container">
-      <h1>Account Info</h1>
+      <h1>Account Information</h1>
       <div className="login-form">
-        <h2>Social Login</h2>
+        <h2>Login</h2>
         {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
         {contents}
       </div>

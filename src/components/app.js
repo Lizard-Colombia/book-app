@@ -16,16 +16,36 @@ function AuthenticatedRoute(props) {
   return <Route {...routeProps}>{isAuthenticated ? children : <Redirect to="/account" />}</Route>;
 }
 
-function App() {
-  const [user, setUser] = useState(null);
-  const isAuthenticated = user !== null;
+function useUser(auth) {
+  // const [isLoading, setIsLoading] = useState(true);
+  // const [user, setUser] = useState(null);
+  const [data, setData] = useState({ isLoading: true, user: null});
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((currentUser) => {
-      setUser(currentUser);
-    });
+      // setUser(currentUser);
+      // setIsLoading(false);
+      setData({isLoading: false, user: currentUser});
+         });
     return unsubscribe;
-  }, []);
+  }, [auth]);
+const {isLoading, user} = data;
+  return [isLoading, user];
+
+}
+
+function App() {
+  const [isLoading, user] = useUser(auth);
+  const isAuthenticated = user !== null;
+
+  if (isLoading) return null;
+
+  // useEffect(() => {
+  //   const unsubscribe = auth.onAuthStateChanged((currentUser) => {
+  //     setUser(currentUser);
+  //   });
+  //   return unsubscribe;
+  // }, []);
 
   return (
     <BrowserRouter>
