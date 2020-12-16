@@ -1,9 +1,12 @@
 .movie {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva,
+    Verdana, sans-serif;
+  line-height: 1.75em;
   padding: 1rem;
-  width: 300px;
-  min-height: 175px;
+  width: 400px;
+  min-height: 125px;
   background-color: #fff;
-  color: #151116;
+  color: #4a874a;
   border-radius: 10px;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
   display: flex;
@@ -12,18 +15,17 @@
 }
 
 .movie__button {
-  display: block;
   padding: 0.25rem;
   border-radius: 50%;
   border: none;
   background-color: transparent;
-  color: #151116;
+  color: #a480a9;
   transition: all 0.15s;
   outline: none;
 }
 
-.movie__button:disabled {
-  opacity: 0.6;
+.movie_button:disabled {
+  opacity: 0.5;
 }
 
 .movie__button:focus {
@@ -42,7 +44,7 @@
 }
 
 .movie__button svg {
-  font-size: 1.25rem;
+  font-size: 1.35rem;
 }
 
 .movie > * {
@@ -51,6 +53,20 @@
 
 .movie__title {
   font-weight: bold;
+  font-size: 18px;
+  color: #244424;
+}
+
+.movie__subtitle {
+  font-weight: 400;
+  font-size: 18px;
+  color: #244424;
+}
+
+.movie__review {
+  font-weight: bold;
+  font-size: 18px;
+  color: #a480a9;
 }
 
 .movie__year {
