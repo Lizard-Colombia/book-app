@@ -22,7 +22,7 @@ function useAllBooks(userId) {
     };
 const unsubscribe = usersCollection.doc(userId).collection("books").orderBy("title", "desc").onSnapshot(onNext, onError);
     return unsubscribe;
-  }, []);
+  }, [userId]);
 
   return [books, isLoading, errorMessage];
 }

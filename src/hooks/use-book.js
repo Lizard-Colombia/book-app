@@ -28,7 +28,7 @@ function useBook(userId, bookId) {
     }
 
     getBook();
-  }, [bookId]);
+  }, [bookId, userId]);
 
   return [bookData, isLoading, errorMessage];
 }

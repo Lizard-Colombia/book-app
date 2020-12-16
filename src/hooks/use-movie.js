@@ -28,7 +28,7 @@ function useMovie(userId, movieId) {
     }
 
     getMovie();
-  }, [movieId]);
+  }, [movieId, userId]);
 
   return [movieData, isLoading, errorMessage];
 }

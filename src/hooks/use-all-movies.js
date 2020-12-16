@@ -22,7 +22,7 @@ function useAllMovies(userId) {
     };
 const unsubscribe = usersCollection.doc(userId).collection("movies").orderBy("rating", "desc").onSnapshot(onNext, onError);
     return unsubscribe;
-  }, []);
+  }, [userId]);
 
   return [movies, isLoading, errorMessage];
 }
