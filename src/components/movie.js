@@ -41,7 +41,7 @@ function Movie(props) {
         <button className="movie__button" disabled={isDeleting} onClick={deleteMovie}>
           <Delete />
         </button>
-        <button className="movie__button" onClick={() => history.push(`/edit/${id}`)}>
+        <button className="movie__button" onClick={() => history.push(`/edit-movie-page/${id}`)}>
           <Edit />
         </button>
       </div>

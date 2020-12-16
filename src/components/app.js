@@ -56,7 +56,7 @@ function App() {
           <AddMoviePage user={user} />
         </AuthenticatedRoute>
 
-        <AuthenticatedRoute path="/edit/:id" isAuthenticated={isAuthenticated}>
+        <AuthenticatedRoute path="/edit-movie-page/:id" isAuthenticated={isAuthenticated}>
           <EditMoviePage user={user} />
         </AuthenticatedRoute>
 
