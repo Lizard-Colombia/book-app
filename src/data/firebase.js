@@ -19,7 +19,8 @@ const auth = firebase.auth();
 
 const db = firebase.firestore();
 const booksCollection = db.collection("books");
+const moviesCollection = db.collection("movies");
 const usersCollection = db.collection("users");
 
 export default db;
-export { booksCollection, usersCollection, provider, auth, firebase };
+export { booksCollection, usersCollection, moviesCollection, provider, auth, firebase };
