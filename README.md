@@ -17,3 +17,4 @@
  * Edit multiple books/movies at once
  * Create categories and diplay them
  
+![App Image](https://github.com/Lizard-Colombia/book-app/blob/main/src/images/app-image.png)
